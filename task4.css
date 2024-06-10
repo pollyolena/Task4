@@ -1,0 +1,527 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.left-column {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #444;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.header .logo {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    background-color: orange;
+    color: white;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Відстань вниз, щоб відобразити "ластівчиний хвіст" */
+    left: 0;
+    width: 100%;
+    height: 20px; /* Висота "ластівчиного хвоста" */
+    background-color: orange; /* Оранжевий фон */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 80%, 0% 100%); /* Заокруглені кути */
+}
+
+.logo p {
+    margin: 0;
+    font-size: 16px;
+    color: white; /* Білий колір тексту */
+    position: relative; /* Це необхідно, щоб текст відображався над фоном */
+    z-index: 1; /* Піднімаємо текст над фоном */
+}
+
+
+.contact-info .menu {
+    margin-left: 200px;
+    font-size: 16px;
+}
+
+.header .logo p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffa500;
+}
+
+.header .contact-info p,
+.header .menu p {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 80px;
+    font-size: 14px;
+}
+
+.und {
+    border-bottom: 1px solid #ccc;
+}
+.header .contact-info p {
+    font-size: 14px;
+    text-align: left;
+}
+
+.header .menu {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.header .login {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.header .login button {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: rgb(255, 255, 243);
+}
+
+.content .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* додати відступ вниз */
+}
+
+.count {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff8c00;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    margin-left: 0;
+    margin-right: 30px;
+    font-size: 12px;
+    align-items: center;
+}
+
+.pizza-category {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.pizza-category button {
+    flex: 1;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.pizza-list,
+.additional-pizzas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.new {
+    position: fixed;
+    top: 120px; /* Вказуємо відступ від верхнього краю */
+    left: 380px; /* Вказуємо відступ від лівого краю */
+    width: 50px; /* Задаємо ширину */
+    height: 20px; /* Задаємо висоту */
+    background-color: rgb(208, 59, 59); /* Червоний фон */
+    border-radius: 2px; /* Закруглені кути */
+    color: white; /* Білий колір тексту */
+    text-align: center; /* Вирівнюємо текст по центру */
+    line-height: 20px; /* Вирівнюємо текст по вертикалі по центру */
+    font-size: 15px; /* Розмір тексту */
+    font-weight: bold; /* Жирний шрифт */
+}
+
+.pop {
+    position: absolute;
+    top: 120px; /* Вказуємо відступ від верхнього краю */
+    left: 610px; /* Вказуємо відступ від лівого краю */
+    width: 100px; /* Задаємо ширину */
+    height: 20px; /* Задаємо висоту */
+    background-color: rgb(75, 175, 70); /* Червоний фон */
+    border-radius: 2px; /* Закруглені кути */
+    color: white; /* Білий колір тексту */
+    text-align: center; /* Вирівнюємо текст по центру */
+    line-height: 20px; /* Вирівнюємо текст по вертикалі по центру */
+    font-size: 15px; /* Розмір тексту */
+    font-weight: bold; /* Жирний шрифт */
+}
+
+.additional-pizzas {
+    display: flex;
+    justify-content: left;
+}
+
+.photo {
+    width: 10px;
+    height: 12px;
+}
+
+.pizza-item h3 {
+    color: rgb(227, 82, 0);
+    text-align: left;
+}
+
+.pizza-sizes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.size-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.size-option span {
+    margin-bottom: 5px;
+}
+
+.siza {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.gr,
+.bl {
+    margin: 0; /* Видалити внутрішні відступи */
+    text-align: left; /* Вирівняти текст зліва */
+    font-size: 12px;
+}
+
+.gr {
+    color: grey;
+}
+
+.bl {
+    color: black;
+    font-size: 12px;
+}
+
+.price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.total p {
+    margin: 0 0 10px 0;
+}
+
+button {
+    color: #ff6600;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0px;
+    align-items: center;
+}
+
+.form {
+    background-color: rgb(255, 255, 243);
+    color: #ff6600;
+}
+
+.form:hover {
+    background-color: #ff6600;
+    color: #ffffff;
+}
+
+.button:hover {
+    background-color: #ff6600;
+}
+
+.round {
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.plus-button {
+    background-color: rgb(69, 164, 64);
+    color: white;
+}
+
+.minus-button {
+    background-color: rgb(185, 31, 32);
+    color: white;
+}
+
+.delete-button{
+    background-color: rgb(192, 190, 190);
+    color: rgb(321, 117, 0);
+}
+
+.ball {
+    background-color: rgb(235, 153, 44);
+    color: white;
+    border-color: rgb(205, 104, 2);
+    border: 2px;
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0px;
+    align-items: center;
+}
+
+.info-block {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.info-block p {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.right-column {
+    flex: 0.5;
+    background-color: rgb(255, 255, 255);
+    border-left: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.order {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-item {
+    display: flex;
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    justify-content: space-between; /* Розташовуємо елементи по краях */
+    background-color: rgb(242, 242, 242);
+    border-bottom: 1px solid #ccc;
+}
+
+.pizza-info {
+    flex-grow: 1; /* Розтягуємо блок, щоб зайняти всі доступні простори */
+}
+
+.col {
+    color: rgb(232, 121, 0);
+}
+.pizza-image {
+    margin-left: 10px; /* Додаємо відступ між елементами */
+    width: 45px;
+    height: 100px;
+    margin-right: 0;
+}
+
+.total {
+    text-align: center;
+    border-bottom: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+.item {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    gap: 5px; /* Відстань між елементами */
+    margin-top: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.item .clear-order {
+    color: grey;
+    font-weight: normal;
+}
+
+.clear-order {
+    text-align: right;
+    font-size: 11px;
+}
+
+.order-footer {
+    border-top: 1px solid #ccc;
+    border-bottom: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.order-footer p {
+    margin: 0;
+}
+
+.balll {
+    background-color: rgb(235, 153, 44);
+    color: white;
+    border-color: rgb(205, 104, 2);
+    border: 2px;
+    padding: 15px 100px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0px;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Додамо стилі для бейджа */
+.badge {
+    position: fixed; /* Закріпимо бейдж */
+    bottom: 0; /* Відстань від верхнього краю */
+    left: 13px; /* Відстань від лівого краю */
+    background-color: orange; /* Оранжевий колір фону */
+    color: white; /* Білий колір тексту */
+    padding: 10px; /* Внутрішній відступ */
+    text-align: center;
+    clip-path: polygon(0% 100%, 100% 100%, 100% 0%, 50% 20%, 0% 0%); /* Додаємо форму хвоста ластівки */
+}
+
+.badge span {
+    display: block; /* Розмістимо кожен рядок на новому рядку */
+    top: 20px;
+}
+
+.burden {
+    font-weight: bold; /* Жирний шрифт для burden */
+    text-decoration: underline; /* Підкреслений текст для burden */
+}
+
+.new-label {
+    background-color: rgb(208, 59, 59);
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    border-radius: 2px;
+}
+
+.popular-label {
+    background-color: rgb(75, 175, 70);
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: -10px;
+    border-radius: 2px;
+}
+
+.pizza-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+}
+
+
+.mgi {
+    width: 100%;
+    height: auto;
+}
+
+.size-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.size-option span {
+    margin-bottom: 5px;
+}
+
+/* Змінюємо розташування елементів у колонку при дуже маленькому вікні */
+@media screen and (max-width: 600px) {
+    .pizza-list,
+    .additional-pizzas {
+      grid-template-columns: 1fr; /* Змінюємо на один стовпчик */
+      justify-content: center;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .contact-info span:not(:first-child) {
+      display: none; /* Приховуємо всі span крім першого */
+    }
+  }  
